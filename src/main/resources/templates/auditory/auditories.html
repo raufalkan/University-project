@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<script>
+    function rowClicked(value) {
+        location.href = "auditory?id=" + value;
+    }
+</script>
+</head>
+<body>
+    <div th:replace="fragments/header">header</div>
+
+    <div class="container-fluid">
+        <th:block th:if="${errorMessage != null}">
+            <div class="alert alert-danger" th:text="${errorMessage}">Error!!</div>
+            <br />
+        </th:block>
+        <th:block th:if="${auditories != null}">
+            <table class="table table-hover">
+                <tr>
+                    <th th:text="#{messages.templates.auditory.auditoryname}">Auditory name</th>
+                    <th th:text="#{messages.templates.auditory.auditorytype}">Auditory type</th>
+                    <th th:text="#{messages.templates.auditory.auditorycapacity}">Maximum capacity</th>
+                    <th th:text="#{messages.templates.auditory.auditorydescription}">Description</th>
+                </tr>
+                <tr th:each="auditory : ${auditories}"
+                    th:onclick="'javascript:rowClicked(\'' + ${auditory.id} + '\');'">
+                    <td th:text="${auditory.auditoryNumber}">Auditory name</td>
+                    <td th:text="${auditory.auditoryTypeTitle}">Auditory type</td>
+                    <td th:text="${auditory.maxCapacity}">Maximum capacity</td>
+                    <td th:text="${auditory.description}">Description</td>
+                </tr>
+            </table>
+        </th:block>
+    </div>
+    <br />
+
+    <div th:insert="fragments/footer">&copy;2019 University
+        project</div>
+</body>
+</html>

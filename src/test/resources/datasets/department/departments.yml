@@ -1,0 +1,13 @@
+DEPARTMENTS:
+  - ID: 10
+    TITLE: "department1"
+    DESCRIPTION: "bla bla bla 1"
+    FACULTY_ID: null
+  - ID: 20
+    TITLE: "department2"
+    DESCRIPTION: "bla bla bla 2"
+    FACULTY_ID: null
+  - ID: 30
+    TITLE: "department3"
+    DESCRIPTION: "bla bla bla 3"
+    FACULTY_ID: null

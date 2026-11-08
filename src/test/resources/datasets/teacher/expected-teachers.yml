@@ -1,0 +1,27 @@
+PERSONS:
+  - ID: 1
+    FIRST_NAME: "firstNameTe1" 
+    LAST_NAME: "lastNameTe1" 
+    MIDDLE_NAME: "middleNameTe1" 
+    BIRTHDAY: "1980-06-25"
+    IDFEES: 111111166
+  - ID: 2
+    FIRST_NAME: "firstNameTe2" 
+    LAST_NAME: "lastNameTe2" 
+    MIDDLE_NAME: "middleNameTe2" 
+    BIRTHDAY: "1966-06-25"
+    IDFEES: 211111111
+  - ID: 3
+    FIRST_NAME: "firstNameTe3" 
+    LAST_NAME: "lastNameTe3" 
+    MIDDLE_NAME: "middleNameTe3" 
+    BIRTHDAY: "1950-06-25"
+    IDFEES: 333111111
+
+TEACHERS:
+  - PERSON_ID: 1
+    DEPARTMENT_ID: null
+  - PERSON_ID: 2
+    DEPARTMENT_ID: null
+  - PERSON_ID: 3
+    DEPARTMENT_ID: null

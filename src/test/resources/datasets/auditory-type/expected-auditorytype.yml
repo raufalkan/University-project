@@ -1,0 +1,3 @@
+AUDITORY_TYPES:
+  - ID: "regex:\\d+"
+    TYPE: "Practic" 

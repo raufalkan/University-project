@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<script>
+    function rowClicked(value) {
+        location.href = "auditorytype?id=" + value;
+    }
+</script>
+</head>
+<body>
+    <div th:replace="fragments/header">header</div>
+
+    <div class="container-fluid">
+        <th:block th:if="${errorMessage != null}">
+            <div class="alert alert-danger" th:text="${errorMessage}">Error!!</div>
+            <br />
+        </th:block>
+        <th:block th:if="${auditorytypes != null}">
+            <table class="table table-hover">
+                <tr>
+                    <th th:text="#{messages.templates.auditorytype.type}">Type</th>
+                </tr>
+                <tr th:each="auditorytype : ${auditorytypes}"
+                    th:onclick="'javascript:rowClicked(\'' + ${auditorytype.id} + '\');'">
+                    <td th:text="${auditorytype.type}">Type</td>
+                </tr>
+            </table>
+        </th:block>
+    </div>
+    <br />
+
+    <div th:insert="fragments/footer">&copy;2019 University
+        project</div>
+</body>
+</html>

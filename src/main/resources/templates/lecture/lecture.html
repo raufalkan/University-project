@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<script>
+	function buttonClicked(value) {
+		location.href = "lecture_edit?id=" + value;
+	}
+</script>
+</head>
+<body>
+    <div th:replace="fragments/header">header</div>
+
+    <div class="container-fluid">
+        <th:block th:if="${errorMessage != null}">
+            <div class="alert alert-danger" th:text="${errorMessage}">Error!!</div>
+            <br />
+        </th:block>
+        <th:block th:if="${lectureDto != null}">
+            <th:block th:if="${successMessage != null}">
+                <div class="alert alert-success" th:text="${successMessage}">Success</div>
+                <br />
+            </th:block>
+            <table class="table table-bordered">
+                <tr class="success">
+                    <th th:text="#{messages.templates.lecture.number}">Number</th>
+                    <td th:text="${lectureDto.number}">Number</td>
+                </tr>
+                <tr>
+                    <th th:text="#{messages.templates.lecture.starttime}">Start time</th>
+                    <td th:text="${lectureDto.startTime}">Start time</td>
+                </tr>
+                <tr>
+                    <th th:text="#{messages.templates.lecture.endtime}">End time</th>
+                    <td th:text="${lectureDto.endTime}">End time</td>
+                </tr>
+            </table>
+            <button type="button" class="btn btn-info" th:onclick="'javascript:buttonClicked(\'' + ${lectureDto.id} + '\');'" th:text="#{messages.templates.button.edit}">Edit record</button>
+        </th:block>
+    </div>
+    <br />
+
+    <div th:insert="fragments/footer">&copy;2019 University project</div>
+</body>
+</html>

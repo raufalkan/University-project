@@ -1,0 +1,6 @@
+LECTURIES:
+  - ID: "regex:\\d+"
+    NUMBER: "2" 
+    START_TIME: "09:30:00"
+    END_TIME: "11:05:00"
+    

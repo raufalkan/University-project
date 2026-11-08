@@ -1,0 +1,13 @@
+AUDITORY_TYPES:
+  - ID: 1
+    TYPE: "Lecture" 
+  - ID: 2
+    TYPE: "Practic"
+  - ID: 3
+    TYPE: "Laboratory"
+  - ID: 4
+    TYPE: "Lecture small"
+  - ID: 5
+    TYPE: "Holl"
+  - ID: 6
+    TYPE: "Recriation"

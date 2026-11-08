@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<script>
+	function buttonClicked(value) {
+		location.href = "group_edit?id=" + value;
+	}
+</script>
+</head>
+<body>
+    <div th:replace="fragments/header">groups header</div>
+
+    <div class="container-fluid">
+        <th:block th:if="${errorMessage != null}">
+            <div class="alert alert-danger" th:text="${errorMessage}">Error!!</div>
+            <br />
+        </th:block>
+        <th:block th:if="${groupDto != null}">
+            <th:block th:if="${successMessage != null}">
+                <div class="alert alert-success" th:text="${successMessage}">Success</div>
+                <br />
+            </th:block>
+            <table class="table table-bordered">
+                <tr class="success">
+                    <th th:text="#{messages.templates.group.title}">Title</th>
+                    <td th:text="${groupDto.title}">Title</td>
+                </tr>
+                <tr>
+                    <th th:text="#{messages.templates.group.yearofentry}">Year of entry</th>
+                    <td th:text="${groupDto.yearEntry}">Year of entry</td>
+                </tr>
+            </table>
+            <button type="button" class="btn btn-info" th:onclick="'javascript:buttonClicked(\'' + ${groupDto.id} + '\');'" th:text="#{messages.templates.button.edit}">Edit record</button>
+        </th:block>
+    </div>
+    <br />
+
+    <div th:insert="fragments/footer">&copy;2019 University project</div>
+</body>
+</html>

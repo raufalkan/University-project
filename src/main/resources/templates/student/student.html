@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<script>
+	function buttonClicked(value) {
+		location.href = "student_edit?id=" + value;
+	}
+</script>
+</head>
+<body>
+    <div th:replace="fragments/header">groups header</div>
+    
+    <div class="col-sm-12">
+    <a th:href="@{/timetable-items(selectedStudent=${studentDto.id})}" class="btn btn-success col-sm-2 " th:text="#{messages.templates.button.gototimetableitems}">&nbsp;Go to timetable items</a>
+    </div>
+
+    <div class="container-fluid">
+        <th:block th:if="${errorMessage != null}">
+            <div class="alert alert-danger" th:text="${errorMessage}">Error!!</div>
+            <br />
+        </th:block>
+        <th:block th:if="${studentDto != null}">
+            <th:block th:if="${successMessage != null}">
+                <div class="alert alert-success" th:text="${successMessage}">Success</div>
+                <br />
+            </th:block>
+            <table class="table table-bordered">
+                <tr class="success">
+                    <th th:text="#{messages.templates.student.firstname}">First name</th>
+                    <td th:text=${studentDto.firstName}></td>
+                </tr>
+                <tr>
+                    <th th:text="#{messages.templates.student.lastname}">Last name</th>
+                    <td th:text=${studentDto.lastName}></td>
+                </tr>
+                <tr>
+                    <th th:text="#{messages.templates.student.middlename}">Middle name</th>
+                    <td th:text=${studentDto.middleName}></td>
+                </tr>
+                <tr>
+                    <th th:text="#{messages.templates.student.birthday}">Birthday</th>
+                    <td th:text=${studentDto.birthday}></td>
+                </tr>
+                <tr>
+                    <th th:text="#{messages.templates.student.idfees}">Id fees</th>
+                    <td th:text=${studentDto.idFees}></td>
+                </tr>
+                <tr>
+                    <th th:text="#{messages.templates.student.grouptitle}">Group title</th>
+                    <td th:text=${studentDto.groupTitle}></td>
+                </tr>
+            </table>
+            <button type="button" class="btn btn-info" th:onclick="'javascript:buttonClicked(\'' + ${studentDto.id} + '\');'" th:text="#{messages.templates.button.edit}">Edit record</button>
+        </th:block>
+    </div>
+
+    <br />
+
+    <div th:insert="fragments/footer">&copy;2019 University project</div>
+</body>
+</html>

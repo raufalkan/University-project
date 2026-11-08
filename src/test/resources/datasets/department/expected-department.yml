@@ -1,0 +1,5 @@
+DEPARTMENTS:
+  - ID: "regex:\\d+"
+    TITLE: "department2"
+    DESCRIPTION: "bla bla bla 2"
+    FACULTY_ID: null 

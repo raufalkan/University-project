@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<script>
+    function rowClicked(value) {
+        location.href = "subject?id=" + value;
+    }
+</script>
+</head>
+<body>
+    <div th:replace="fragments/header">header</div>
+
+    <div class="container-fluid">
+        <th:block th:if="${errorMessage != null}">
+            <div class="alert alert-danger" th:text="${errorMessage}">Error!!</div>
+            <br />
+        </th:block>
+        <th:block th:if="${subjects != null}">
+            <table class="table table-hover">
+                <tr>
+                    <th th:text="#{messages.templates.subject.title}">Title</th>
+                </tr>
+                <tr th:each="subject : ${subjects}"
+                    th:onclick="'javascript:rowClicked(\'' + ${subject.id} + '\');'">
+                    <td th:text="${subject.title}">Title</td>
+                </tr>
+            </table>
+        </th:block>
+    </div>
+    <br />
+
+    <div th:insert="fragments/footer">&copy;2019 University
+        project</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<script>
+    function buttonClicked(value) {
+        location.href = "timetable-item_edit?id=" + value;
+    }
+</script>
+</head>
+<body>
+    <div th:replace="fragments/header">header</div>
+
+    <div class="container-fluid">
+        <th:block th:if="${errorMessage != null}">
+            <div class="alert alert-danger" th:text="${errorMessage}">Error!!</div>
+            <br />
+        </th:block>
+        <th:block th:if="${timetableItemDto != null}">
+            <th:block th:if="${successMessage != null}">
+                <div class="alert alert-success" th:text="${successMessage}">Success</div>
+                <br />
+            </th:block>
+            <table class="table table-bordered">
+                <tr>
+                    <th th:text="#{messages.templates.timetableitem.subject}">Subject</th>
+                    <td th:text=${timetableItemDto.subjectTitle}></td>
+                </tr>
+                <tr>
+                    <th th:text="#{messages.templates.timetableitem.auditory}">Auditory</th>
+                    <td th:text=${timetableItemDto.auditoryTitle}></td>
+                </tr>
+                <tr>
+                    <th th:text="#{messages.templates.timetableitem.lecture}">Lecture</th>
+                    <td th:text=${timetableItemDto.lectureTitle}></td>
+                </tr>
+                <tr>
+                    <th th:text="#{messages.templates.timetableitem.date}">Date</th>
+                    <td th:text=${timetableItemDto.date}></td>
+                </tr>
+                <tr>
+                    <th th:text="#{messages.templates.timetableitem.teacher}">Teacher</th>
+                    <td th:text=${timetableItemDto.teacherTitle}></td>
+                </tr>
+
+                <tr th:if="${not #lists.isEmpty(timetableItemDto.groups)}">
+                    <th th:text="#{messages.templates.timetableitem.groups}">Groups</th>
+                    <td>
+                        <ul>
+                            <li th:each="group : ${timetableItemDto.groups}" th:text="${group.title}"></li>
+                        </ul>
+                    </td>
+                </tr>
+
+            </table>
+            <button type="button" class="btn btn-info" th:onclick="'javascript:buttonClicked(\'' + ${timetableItemDto.id} + '\');'" th:text="#{messages.templates.button.edit}">Edit record</button>
+        </th:block>
+    </div>
+
+    <br />
+
+    <div th:insert="fragments/footer">&copy;2019 University project</div>
+</body>
+</html>

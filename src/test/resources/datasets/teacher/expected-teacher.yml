@@ -1,0 +1,11 @@
+PERSONS:
+  - ID: "regex:\\d+"
+    FIRST_NAME: "firstNameTe2" 
+    LAST_NAME: "lastNameTe2" 
+    MIDDLE_NAME: "middleNameTe2" 
+    BIRTHDAY: "1966-06-25"
+    IDFEES: 211111111
+
+TEACHERS:
+  - PERSON_ID: "regex:\\d+"
+    DEPARTMENT_ID: null

@@ -1,0 +1,7 @@
+TIMETABLE_ITEMS:
+  - ID: "regex:\\d+"
+    SUBJECT_ID: null
+    AUDITORY_ID: null
+    LECTURE_ID: null
+    DATE: "2020-06-25"
+    TEACHER_ID: null

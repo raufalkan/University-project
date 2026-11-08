@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<script>
+    function rowClicked(value) {
+        location.href = "timetable-item?id=" + value;
+    }
+</script>
+</head>
+<body>
+    <div th:replace="fragments/header">header</div>
+    <div th:replace="fragments/filters_form">search form</div>
+    
+    <div class="container-fluid">
+        <th:block th:if="${errorMessage != null}">
+            <div class="alert alert-danger" th:text="${errorMessage}">Error!!</div>
+            <br />
+        </th:block>
+        <th:block th:if="${timetableItems != null}">
+            <table class="table table-hover">
+                <tr>
+                    <th th:text="#{messages.templates.timetableitem.subject}">Subject</th>
+                    <th th:text="#{messages.templates.timetableitem.auditory}">Auditory</th>
+                    <th th:text="#{messages.templates.timetableitem.lecture}">Lecture</th>
+                    <th th:text="#{messages.templates.timetableitem.date}">Date</th>
+                    <th th:text="#{messages.templates.timetableitem.teacher}">Teacher</th>
+                </tr>
+                <tr th:each="timetableItem : ${timetableItems}" th:onclick="'javascript:rowClicked(\'' + ${timetableItem.id} + '\');'">
+                    <td th:text="${timetableItem.subjectTitle}">Subject</td>
+                    <td th:text="${timetableItem.auditoryTitle}">Auditory</td>
+                    <td th:text="${timetableItem.lectureTitle}">Lecture</td>
+                    <td th:text="${timetableItem.date}">Date</td>
+                    <td th:text="${timetableItem.teacherTitle}">Teacher</td>
+                </tr>
+            </table>
+        </th:block>
+    </div>
+    <br />
+
+    <div th:insert="fragments/footer">&copy;2019 University project</div>
+</body>
+</html>

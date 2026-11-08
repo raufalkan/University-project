@@ -1,0 +1,66 @@
+GROUPS:
+  - ID: 1
+    TITLE: "group11" 
+    YEARENTRY: 2016
+  - ID: 2
+    TITLE: "group12"
+    YEARENTRY: 2018
+  - ID: 3
+    TITLE: "group13"
+    YEARENTRY: 2017
+  - ID: 4
+    TITLE: "group14"
+    YEARENTRY: 2016
+
+PERSONS:
+  - ID: 1
+    FIRST_NAME: "firstName1" 
+    LAST_NAME: "lastName1" 
+    MIDDLE_NAME: "middleName1" 
+    BIRTHDAY: "1999-06-25"
+    IDFEES: 111111111
+  - ID: 2
+    FIRST_NAME: "firstName2" 
+    LAST_NAME: "lastName2" 
+    MIDDLE_NAME: "middleName2" 
+    BIRTHDAY: "1998-06-25"
+    IDFEES: 222211111
+  - ID: 3
+    FIRST_NAME: "firstName3" 
+    LAST_NAME: "lastName3" 
+    MIDDLE_NAME: "middleName3" 
+    BIRTHDAY: "2001-07-25"
+    IDFEES: 111133331
+  - ID: 4
+    FIRST_NAME: "firstName4" 
+    LAST_NAME: "lastName4" 
+    MIDDLE_NAME: "middleName4" 
+    BIRTHDAY: "1999-06-25"
+    IDFEES: 411111141
+  - ID: 5
+    FIRST_NAME: "firstName5" 
+    LAST_NAME: "lastName5" 
+    MIDDLE_NAME: "middleName5" 
+    BIRTHDAY: "1998-01-20"
+    IDFEES: 111111551
+  - ID: 6
+    FIRST_NAME: "firstName6" 
+    LAST_NAME: "lastName6" 
+    MIDDLE_NAME: "middleName6" 
+    BIRTHDAY: "1997-02-15"
+    IDFEES: 111111661
+
+STUDENTS:
+  - PERSON_ID: 1
+    GROUP_ID: 1
+  - PERSON_ID: 2
+    GROUP_ID: 1
+  - PERSON_ID: 3
+    GROUP_ID: 2
+  - PERSON_ID: 4
+    GROUP_ID: 2
+  - PERSON_ID: 5
+    GROUP_ID: 2
+  - PERSON_ID: 6
+    GROUP_ID: 3
+    

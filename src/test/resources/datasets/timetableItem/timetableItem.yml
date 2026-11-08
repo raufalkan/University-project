@@ -1,0 +1,7 @@
+TIMETABLE_ITEMS:
+  - ID: 1
+    SUBJECT_ID: null
+    AUDITORY_ID: null
+    LECTURE_ID: null
+    DATE: "1995-06-25"
+    TEACHER_ID: null

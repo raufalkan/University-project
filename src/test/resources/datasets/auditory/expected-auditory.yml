@@ -1,0 +1,7 @@
+AUDITORIES:
+  - ID: "regex:\\d+"
+    NUMBER: "102a" 
+    AUDITORY_TYPE_ID: null
+    CAPACITY: 50
+    DESCRIPTION: "bla bla bla 2"
+    

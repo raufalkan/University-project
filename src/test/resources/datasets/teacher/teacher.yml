@@ -1,0 +1,11 @@
+PERSONS:
+  - ID: 1
+    FIRST_NAME: "firstNameTe1" 
+    LAST_NAME: "lastNameTe1" 
+    MIDDLE_NAME: "middleNameTe1" 
+    BIRTHDAY: "1980-06-25"
+    IDFEES: 111111166
+
+TEACHERS:
+  - PERSON_ID: 1
+    DEPARTMENT_ID: null

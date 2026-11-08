@@ -1,0 +1,13 @@
+GROUPS:
+  - ID: 1
+    TITLE: "group1" 
+    YEARENTRY: 2016
+  - ID: 2
+    TITLE: "group2"
+    YEARENTRY: 2018
+  - ID: 3
+    TITLE: "group3"
+    YEARENTRY: 2017
+  - ID: 4
+    TITLE: "group4"
+    YEARENTRY: 2016

@@ -1,0 +1,5 @@
+DEPARTMENTS:
+  - ID: 1
+    TITLE: "department1"
+    DESCRIPTION: "bla bla bla 1"
+    FACULTY_ID: null

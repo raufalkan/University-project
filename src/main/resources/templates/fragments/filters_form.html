@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+    <th:block th:if="${timetableFiltersDto != null}">
+        <form class="navbar-form navbar-center" role="search" th:action="@{/timetable-items}" method="post" th:object="${timetableFiltersDto}">
+            <div class="form-group">
+                <label for="startDate" th:text="#{messages.templates.fragments.filterform.from}">From:</label> <input th:type="date" class="form-control" th:field="*{startDate}" required>
+            </div>
+            <div class="form-group">
+                <label for="endDate" th:text="#{messages.templates.fragments.filterform.to}">To:</label> <input th:type="date" class="form-control" th:field="*{endDate}" required>
+            </div>
+            <div class="form-group">
+                <select class="form-control" data-live-search="true" th:field="*{selectedTeacher}">
+                    <option value=0 th:text="${timetableFiltersDto.selectedTeacher}==0 ? #{messages.templates.fragments.filterform.chooseteacher} : #{messages.templates.fragments.filterform.removeteacher}"></option>
+                    <option th:each="teacher : *{availableTeachers}" th:value="${teacher.id}" th:text=${teacher.firstName} th:selected="${timetableFiltersDto.selectedTeacher}==${teacher.id}"></option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select class="form-control" data-live-search="true" th:field="*{selectedStudent}">
+                    <option value=0 th:text="${timetableFiltersDto.selectedStudent}==0 ? #{messages.templates.fragments.filterform.choosestudent}:#{messages.templates.fragments.filterform.removestudent}"></option>
+                    <option th:each="student : *{availableStudents}" th:value="${student.id}" th:text=${student.firstName} th:selected="${timetableFiltersDto.selectedStudent}==${student.id}"></option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-default" th:text="#{messages.templates.button.search}">Search</button>
+        </form>
+    </th:block>
+</body>
+</html>

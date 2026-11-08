@@ -1,0 +1,287 @@
+SUBJECTS:
+  - ID: 1
+    TITLE: "Programming" 
+  - ID: 2
+    TITLE: "Phisics"
+  - ID: 3
+    TITLE: "Mathmatics"
+  - ID: 4
+    TITLE: "Biologic"
+
+AUDITORY_TYPES:
+  - ID: 1
+    TYPE: "Lecture" 
+  - ID: 2
+    TYPE: "Practic"
+  - ID: 3
+    TYPE: "Laboratory"
+  - ID: 4
+    TYPE: "Lecture small"
+    
+AUDITORIES:
+  - ID: 1
+    NUMBER: "101a" 
+    AUDITORY_TYPE_ID: 1
+    CAPACITY: 100
+    DESCRIPTION: "bla bla bla 1"
+  - ID: 2
+    NUMBER: "102a" 
+    AUDITORY_TYPE_ID: 2
+    CAPACITY: 50
+    DESCRIPTION: "bla bla bla 2"
+  - ID: 3
+    NUMBER: "201a" 
+    AUDITORY_TYPE_ID: 3
+    CAPACITY: 10
+    DESCRIPTION: "bla bla bla 3"
+  - ID: 4
+    NUMBER: "103a" 
+    AUDITORY_TYPE_ID: 4
+    CAPACITY: 30
+    DESCRIPTION: "bla bla bla 4"
+  - ID: 5
+    NUMBER: "405a" 
+    AUDITORY_TYPE_ID: 1
+    CAPACITY: 14
+    DESCRIPTION: "bla bla bla 5"
+  - ID: 6
+    NUMBER: "161a" 
+    AUDITORY_TYPE_ID: 2
+    CAPACITY: 20
+    DESCRIPTION: "bla bla bla 6"
+
+LECTURIES:
+  - ID: 1
+    NUMBER: "1" 
+    START_TIME: "07:45:00"
+    END_TIME: "09:20:00"
+  - ID: 2
+    NUMBER: "2" 
+    START_TIME: "09:30:00"
+    END_TIME: "11:05:00"
+  - ID: 3
+    NUMBER: "3" 
+    START_TIME: "11:15:00"
+    END_TIME: "12:50:00"
+  - ID: 4
+    NUMBER: "4" 
+    START_TIME: "13:10:00"
+    END_TIME: "14:45:00"
+  - ID: 5
+    NUMBER: "5" 
+    START_TIME: "14:55:00"
+    END_TIME: "16:30:00"
+  - ID: 6
+    NUMBER: "6" 
+    START_TIME: "16:40:00"
+    END_TIME: "18:15:00"
+
+FACULTIES:
+  - ID: 1
+    TITLE: "faculty1" 
+  - ID: 2
+    TITLE: "faculty2"
+
+DEPARTMENTS:
+  - ID: 1
+    TITLE: "department1"
+    DESCRIPTION: "bla bla bla 1"
+    FACULTY_ID: 1
+  - ID: 2
+    TITLE: "department2"
+    DESCRIPTION: "bla bla bla 2"
+    FACULTY_ID: 1
+  - ID: 3
+    TITLE: "department3"
+    DESCRIPTION: "bla bla bla 3"
+    FACULTY_ID: 2
+
+PERSONS:
+  - ID: 1
+    FIRST_NAME: "firstNameTe1" 
+    LAST_NAME: "lastNameTe1" 
+    MIDDLE_NAME: "middleNameTe1" 
+    BIRTHDAY: "1980-06-25"
+    IDFEES: 111111166
+  - ID: 2
+    FIRST_NAME: "firstNameTe2" 
+    LAST_NAME: "lastNameTe2" 
+    MIDDLE_NAME: "middleNameTe2" 
+    BIRTHDAY: "1966-06-25"
+    IDFEES: 211111111
+  - ID: 3
+    FIRST_NAME: "firstNameTe3" 
+    LAST_NAME: "lastNameTe3" 
+    MIDDLE_NAME: "middleNameTe3" 
+    BIRTHDAY: "1950-06-25"
+    IDFEES: 33311111
+
+TEACHERS:
+  - PERSON_ID: 1
+    DEPARTMENT_ID: 1
+  - PERSON_ID: 2
+    DEPARTMENT_ID: 2
+  - PERSON_ID: 3
+    DEPARTMENT_ID: 3
+
+GROUPS:
+  - ID: 1
+    TITLE: "group1" 
+    YEARENTRY: 2016
+  - ID: 2
+    TITLE: "group2"
+    YEARENTRY: 2018
+  - ID: 3
+    TITLE: "group3"
+    YEARENTRY: 2017
+  - ID: 4
+    TITLE: "group4"
+    YEARENTRY: 2016
+
+TIMETABLE_ITEMS:
+  - ID: 1
+    SUBJECT_ID: 1
+    AUDITORY_ID: 1
+    LECTURE_ID: 1
+    DATE: "2020-06-25"
+    TEACHER_ID: 1
+  - ID: 2
+    SUBJECT_ID: 2
+    AUDITORY_ID: 2
+    LECTURE_ID: 1
+    DATE: "2020-06-25"
+    TEACHER_ID: 2
+  - ID: 3
+    SUBJECT_ID: 2
+    AUDITORY_ID: 2
+    LECTURE_ID: 2
+    DATE: "2020-06-25"
+    TEACHER_ID: 2
+  - ID: 4
+    SUBJECT_ID: 3
+    AUDITORY_ID: 3
+    LECTURE_ID: 2
+    DATE: "2020-06-25"
+    TEACHER_ID: 3
+  - ID: 5
+    SUBJECT_ID: 3
+    AUDITORY_ID: 3
+    LECTURE_ID: 3
+    DATE: "2020-06-25"
+    TEACHER_ID: 3
+  - ID: 6
+    SUBJECT_ID: 4
+    AUDITORY_ID: 4
+    LECTURE_ID: 1
+    DATE: "2020-06-25"
+    TEACHER_ID: 3
+  - ID: 7
+    SUBJECT_ID: 4
+    AUDITORY_ID: 4
+    LECTURE_ID: 2
+    DATE: "2020-06-25"
+    TEACHER_ID: 3
+  - ID: 8
+    SUBJECT_ID: 1
+    AUDITORY_ID: 5
+    LECTURE_ID: 5
+    DATE: "2020-06-25"
+    TEACHER_ID: 1
+  - ID: 9
+    SUBJECT_ID: 2
+    AUDITORY_ID: 4
+    LECTURE_ID: 5
+    DATE: "2020-06-25"
+    TEACHER_ID: 2
+  - ID: 10
+    SUBJECT_ID: 3
+    AUDITORY_ID: 3
+    LECTURE_ID: 6
+    DATE: "2020-06-25"
+    TEACHER_ID: 3
+  - ID: 11
+    SUBJECT_ID: 1
+    AUDITORY_ID: 1
+    LECTURE_ID: 1
+    DATE: "2020-06-19"
+    TEACHER_ID: 1
+  - ID: 12
+    SUBJECT_ID: 2
+    AUDITORY_ID: 2
+    LECTURE_ID: 2
+    DATE: "2020-06-18"
+    TEACHER_ID: 1
+  - ID: 13
+    SUBJECT_ID: 2
+    AUDITORY_ID: 2
+    LECTURE_ID: 2
+    DATE: "2020-06-20"
+    TEACHER_ID: 1
+  - ID: 14
+    SUBJECT_ID: 3
+    AUDITORY_ID: 3
+    LECTURE_ID: 2
+    DATE: "2020-06-22"
+    TEACHER_ID: 1
+  - ID: 15
+    SUBJECT_ID: 3
+    AUDITORY_ID: 3
+    LECTURE_ID: 3
+    DATE: "2020-06-26"
+    TEACHER_ID: 1
+  - ID: 16
+    SUBJECT_ID: 4
+    AUDITORY_ID: 4
+    LECTURE_ID: 1
+    DATE: "2020-06-27"
+    TEACHER_ID: 1
+  - ID: 17
+    SUBJECT_ID: 4
+    AUDITORY_ID: 4
+    LECTURE_ID: 2
+    DATE: "2020-06-28"
+    TEACHER_ID: 1
+  - ID: 18
+    SUBJECT_ID: 1
+    AUDITORY_ID: 5
+    LECTURE_ID: 5
+    DATE: "2020-06-29"
+    TEACHER_ID: 1
+  - ID: 19
+    SUBJECT_ID: 2
+    AUDITORY_ID: 4
+    LECTURE_ID: 5
+    DATE: "2020-07-25"
+    TEACHER_ID: 1
+  - ID: 20
+    SUBJECT_ID: 3
+    AUDITORY_ID: 3
+    LECTURE_ID: 6
+    DATE: "2020-05-25"
+    TEACHER_ID: 1
+
+GROUPS_TIMETABLE_ITEMS:
+  - GROUP_ID: 1
+    TIMETABLE_ITEM_ID: 1
+  - GROUP_ID: 1
+    TIMETABLE_ITEM_ID: 4
+  - GROUP_ID: 1
+    TIMETABLE_ITEM_ID: 9
+  - GROUP_ID: 2
+    TIMETABLE_ITEM_ID: 1
+  - GROUP_ID: 2
+    TIMETABLE_ITEM_ID: 3
+  - GROUP_ID: 2
+    TIMETABLE_ITEM_ID: 5
+  - GROUP_ID: 2
+    TIMETABLE_ITEM_ID: 6
+  - GROUP_ID: 3
+    TIMETABLE_ITEM_ID: 2
+  - GROUP_ID: 3
+    TIMETABLE_ITEM_ID: 7
+  - GROUP_ID: 4
+    TIMETABLE_ITEM_ID: 2
+  - GROUP_ID: 4
+    TIMETABLE_ITEM_ID: 8
+  - GROUP_ID: 4
+    TIMETABLE_ITEM_ID: 10

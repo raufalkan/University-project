@@ -1,0 +1,25 @@
+LECTURIES:
+  - ID: 1
+    NUMBER: "1" 
+    START_TIME: "07:45:00"
+    END_TIME: "09:20:00"
+  - ID: 2
+    NUMBER: "2" 
+    START_TIME: "09:30:00"
+    END_TIME: "11:05:00"
+  - ID: 3
+    NUMBER: "3" 
+    START_TIME: "11:15:00"
+    END_TIME: "12:50:00"
+  - ID: 4
+    NUMBER: "4" 
+    START_TIME: "13:10:00"
+    END_TIME: "14:45:00"
+  - ID: 5
+    NUMBER: "5" 
+    START_TIME: "14:55:00"
+    END_TIME: "16:30:00"
+  - ID: 6
+    NUMBER: "6" 
+    START_TIME: "16:40:00"
+    END_TIME: "18:15:00"

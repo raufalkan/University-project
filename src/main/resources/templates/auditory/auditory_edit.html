@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+    <div th:replace="fragments/header">header</div>
+
+    <div class="container-fluid">
+        <th:block th:if="${errorMessage != null}">
+            <div class="alert alert-danger">
+                <div th:text="${errorMessage}"></div>
+            </div>
+        </th:block>
+        <th:block th:if="${successMessage != null}">
+            <div class="alert alert-success" th:text="${successMessage}">Success</div>
+        </th:block>
+    </div>
+    <br />
+
+    <div class="container-fluid">
+        <form class="form-horizontal" action="#" th:action="@{/auditory_edit}" method="post" th:object="${auditoryDto}">
+            <div class="form-group">
+                <label for="auditoryNumber" class="col-sm-2 control-label" th:text="#{messages.templates.auditory.auditoryname}">Auditory name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{auditoryNumber}" th:placeholder="#{messages.templates.auditory.placeholder.auditoryname}" required>
+                    <small class="text-danger" th:if="${#fields.hasErrors('auditoryNumber')}" th:errors="*{auditoryNumber}">Error</small>
+                </div>
+                <label for="maxCapacity" class="col-sm-2 control-label" th:text="#{messages.templates.auditory.auditorycapacity}">Maximum capacity</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{maxCapacity}" th:placeholder="#{messages.templates.auditory.placeholder.auditorycapacity}">
+                    <small class="text-danger" th:if="${#fields.hasErrors('maxCapacity')}" th:errors="*{maxCapacity}">Error</small>
+                </div>
+                <label for="description" class="col-sm-2 control-label" th:text="#{messages.templates.auditory.auditorydescription}">Description</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{description}" th:placeholder="#{messages.templates.auditory.placeholder.auditorydescription}">
+                    <small class="text-danger" th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Error</small>
+                </div>
+                <label for="auditoryTypeId" class="col-sm-2 control-label" th:text="#{messages.templates.auditory.auditorytype}">Auditory type</label>
+                <div class="col-sm-10">
+                    <select class="selectpicker" data-live-search="true" th:field="*{auditoryTypeId}">
+                        <option value=0 th:text="${auditoryDto.auditoryTypeTitle}==null ? #{messages.templates.select.choose}:#{messages.templates.select.remove}"></option>
+                        <option th:each="auditory : ${auditorytypes}" th:value="${auditory.id}" th:text=${auditory.type} th:selected="${auditoryDto.auditoryTypeId}==${auditory.id}"></option>
+                    </select> 
+                    <small class="text-danger" th:if="${#fields.hasErrors('auditoryTypeId')}" th:errors="*{auditoryTypeId}">Error</small>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <th:block th:if="${auditoryTypeTitle!=null}">
+                        <input type="hidden" th:field="*{auditoryTypeTitle}" />
+                    </th:block>
+                    <input type="hidden" th:field="*{id}" />
+                    <button type="submit" class="btn btn-default" th:text="*{id}==0 ? #{messages.templates.button.create} : #{messages.templates.button.update}"></button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+    <br />
+
+    <div th:insert="fragments/footer">  &copy;2019 University project</div>
+
+</body>
+</html>

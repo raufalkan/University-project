@@ -1,0 +1,13 @@
+FACULTIES:
+  - ID: 1
+    TITLE: "faculty1" 
+  - ID: 2
+    TITLE: "faculty2"
+  - ID: 3
+    TITLE: "faculty3"
+  - ID: 4
+    TITLE: "faculty4"
+  - ID: 5
+    TITLE: "faculty5"
+  - ID: 6
+    TITLE: "faculty6"

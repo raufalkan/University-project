@@ -1,0 +1,3 @@
+FACULTIES:
+  - ID: "regex:\\d+"
+    TITLE: "faculty2" 

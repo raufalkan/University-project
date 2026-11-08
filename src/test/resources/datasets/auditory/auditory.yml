@@ -1,0 +1,10 @@
+AUDITORY_TYPES:
+  - ID: 1
+    TYPE: "Lecture" 
+    
+AUDITORIES:
+  - ID: 1
+    NUMBER: "101a" 
+    AUDITORY_TYPE_ID: 1
+    CAPACITY: 100
+    DESCRIPTION: "bla bla bla 1"

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<script>
+    function rowClicked(value) {
+        location.href = "group?id=" + value;
+    }
+</script>
+</head>
+<body>
+    <div th:replace="fragments/header">groups header</div>
+
+    <div class="container-fluid">
+        <th:block th:if="${errorMessage != null}">
+            <div class="alert alert-danger" th:text="${errorMessage}">Error!!</div>
+            <br />
+        </th:block>
+        <th:block th:if="${groups != null}">
+            <table class="table table-hover">
+                <tr>
+                    <th th:text="#{messages.templates.group.title}">Title</th>
+                    <th th:text="#{messages.templates.group.yearofentry}">Year of entry</th>
+                </tr>
+                <tr th:each="group : ${groups}"
+                    th:onclick="'javascript:rowClicked(\'' + ${group.id} + '\');'">
+                    <td th:text="${group.title}">Title</td>
+                    <td th:text="${group.yearEntry}">Year of entry</td>
+                </tr>
+            </table>
+        </th:block>
+    </div>
+    <br />
+
+    <div th:insert="fragments/footer">&copy;2019 University
+        project</div>
+</body>
+</html>

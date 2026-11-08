@@ -1,0 +1,4 @@
+GROUPS:
+  - ID: "regex:\\d+"
+    TITLE: "group10" 
+    YEARENTRY: 2015

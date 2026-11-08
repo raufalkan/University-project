@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+    <div th:replace="fragments/header">groups header</div>
+
+    <div class="container-fluid">
+        <th:block th:if="${errorMessage != null}">
+            <div class="alert alert-danger">
+                <div th:text="${errorMessage}"></div>
+            </div>
+        </th:block>
+        <th:block th:if="${successMessage != null}">
+            <div class="alert alert-success" th:text="${successMessage}">Success</div>
+        </th:block>
+    </div>
+    <br />
+
+    <div class="container-fluid">
+        <form class="form-horizontal" action="#" th:action="@{/student_edit}" method="post" th:object="${studentDto}">
+            <div class="form-group">
+                <label for="firstName" class="col-sm-2 control-label" th:text="#{messages.templates.student.firstname}">First name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{firstName}" th:placeholder="#{messages.templates.student.placeholder.firstname}" required>
+                    <small class="text-danger" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">Error</small>
+                </div>
+                <label for="lastName" class="col-sm-2 control-label" th:text="#{messages.templates.student.lastname}">Last name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{lastName}" th:placeholder="#{messages.templates.student.placeholder.lastname}">
+                    <small class="text-danger" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Error</small>
+                </div>
+                <label for="middleName" class="col-sm-2 control-label" th:text="#{messages.templates.student.middlename}">Middle name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" th:field="*{middleName}" th:placeholder="#{messages.templates.student.placeholder.middlename}">
+                    <small class="text-danger" th:if="${#fields.hasErrors('middleName')}" th:errors="*{middleName}">Error</small>
+                </div>
+                <label for="birthday" class="col-sm-2 control-label" th:text="#{messages.templates.student.birthday}">Birthday</label>
+                <div class="col-sm-10">
+                    <input th:type="date" class="form-control" th:field="*{birthday}" placeholder="YYYY-MM-DD" required> 
+                    <small class="text-danger" th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}">Error</small>
+                </div>
+                <label for="idFees" class="col-sm-2 control-label" th:text="#{messages.templates.student.idfees}">Id fees</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="idFees" name="idFees" th:value="${studentDto.idFees}>0 ? ${studentDto.idFees} : null" th:placeholder="#{messages.templates.student.placeholder.idfees}" required>
+                    <small class="text-danger" th:if="${#fields.hasErrors('idFees')}" th:errors="*{idFees}">Error</small>
+                </div>
+                <label for="groupId" class="col-sm-2 control-label" th:text="#{messages.templates.student.grouptitle}">Group</label>
+                <div class="col-sm-10">
+                    <select class="selectpicker" data-live-search="true" th:field="*{groupId}">
+                        <option value=0 th:text="${studentDto.groupTitle}==null ? #{messages.templates.select.choose}:#{messages.templates.select.remove}"></option>
+                        <option th:each="group : ${groups}" th:value="${group.id}" th:text=${group.title} th:selected="${studentDto.groupId}==${group.id}"></option>
+                    </select> 
+                    <small class="text-danger" th:if="${#fields.hasErrors('groupId')}" th:errors="*{groupId}">Error</small>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <th:block th:if="${groupTitle!=null}">
+                        <input type="hidden" th:field="*{groupTitle}" />
+                    </th:block>
+                    <input type="hidden" th:field="*{id}" />
+                    <button type="submit" class="btn btn-default" th:text="*{id}==0 ? #{messages.templates.button.create} : #{messages.templates.button.update}"></button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+    <br />
+
+    <div th:insert="fragments/footer">  &copy;2019 University project</div>
+
+</body>
+</html>

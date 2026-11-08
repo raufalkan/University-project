@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<script>
+    function rowClicked(value) {
+        location.href = "student?id=" + value;
+    }
+</script>
+</head>
+<body>
+    <div th:replace="fragments/header">groups header</div>
+
+    <div class="container-fluid">
+        <th:block th:if="${errorMessage != null}">
+            <div class="alert alert-danger" th:text="${errorMessage}">Error!!</div>
+            <br />
+        </th:block>
+        <th:block th:if="${students != null}">
+            <table class="table table-hover">
+                <tr>
+                    <th th:text="#{messages.templates.student.firstname}">First name</th>
+                    <th th:text="#{messages.templates.student.middlename}">Middle name</th>
+                    <th th:text="#{messages.templates.student.birthday}">Birthday</th>
+                    <th th:text="#{messages.templates.student.idfees}">Id fees</th>
+                    <th th:text="#{messages.templates.student.grouptitle}">Group title</th>
+                </tr>
+                <tr th:each="student : ${students}"
+                    th:onclick="'javascript:rowClicked(\'' + ${student.id} + '\');'">
+                    <td th:text="${student.firstName}">First name</td>
+                    <td th:text="${student.middleName}">Middle name</td>
+                    <td th:text="${student.birthday}">Birthday</td>
+                    <td th:text="${student.idFees}">Id fees</td>
+                    <td th:text="${student.groupTitle}">Group title</td>
+                </tr>
+            </table>
+        </th:block>
+    </div>
+    <br />
+
+    <div th:insert="fragments/footer">&copy;2019 University
+        project</div>
+</body>
+</html>

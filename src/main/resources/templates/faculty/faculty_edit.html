@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+    <div th:replace="fragments/header">header</div>
+
+    <div class="container-fluid">
+        <th:block th:if="${errorMessage != null}">
+            <div class="alert alert-danger">
+                <div th:text="${errorMessage}"></div>
+            </div>
+        </th:block>
+        <th:block th:if="${successMessage != null}">
+            <div class="alert alert-success" th:text="${successMessage}">Success</div>
+        </th:block>
+    </div>
+    <br />
+
+    <div class="container-fluid">
+        <form class="form-horizontal" action="#" th:action="@{/faculty_edit}" method="post" th:object="${facultyDto}">
+            <div class="form-group">
+                <label for="title" class="col-sm-3 control-label" th:text="#{messages.templates.faculty.title}">Title</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" th:field="*{title}" th:placeholder="#{messages.templates.faculty.placeholder.title}" required>
+                    <small class="text-danger" th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Error</small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-9">
+                        <input type="hidden" th:field="*{id}" />
+                        <button type="submit" class="btn btn-danger" th:text="*{id}==0 ? #{messages.templates.button.create} : #{messages.templates.button.update}"></button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <br />
+
+    <div th:insert="fragments/footer">&copy;2019 University project</div>
+
+</body>
+
+</html>

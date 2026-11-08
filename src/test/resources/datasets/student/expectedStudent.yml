@@ -1,0 +1,11 @@
+PERSONS:
+  - ID: "regex:\\d+"
+    FIRST_NAME: "firstname3" 
+    LAST_NAME: "lastname3" 
+    MIDDLE_NAME: "middlename3" 
+    BIRTHDAY: "1993-02-01"
+    IDFEES: 111111113
+    
+STUDENTS:
+  - PERSON_ID: "regex:\\d+"
+    GROUP_ID: null

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script>
+        function rowClicked(value) {
+            location.href = "lecture?id=" + value;
+        }
+    </script>
+</head>
+<body>
+<div th:replace="fragments/header">header</div>
+
+<div class="container-fluid">
+    <th:block th:if="${errorMessage != null}">
+        <div class="alert alert-danger" th:text="${errorMessage}">Error!!</div>
+        <br/>
+    </th:block>
+    <th:block th:if="${lecturies != null}">
+        <table class="table table-hover">
+            <tr>
+                <th th:text="#{messages.templates.lecture.number}">Number</th>
+                <th th:text="#{messages.templates.lecture.starttime}">Start time</th>
+                <th th:text="#{messages.templates.lecture.endtime}">End time</th>
+            </tr>
+            <tr th:each="lecture : ${lecturies}"
+                th:onclick="'javascript:rowClicked(\'' + ${lecture.id} + '\');'">
+                <td th:text="${lecture.number}">Number</td>
+                <td th:text="${lecture.startTime}">Start time</td>
+                <td th:text="${lecture.endTime}">End time</td>
+            </tr>
+        </table>
+    </th:block>
+</div>
+<br/>
+
+<div th:insert="fragments/footer">&copy;2019 University project</div>
+</body>
+</html>

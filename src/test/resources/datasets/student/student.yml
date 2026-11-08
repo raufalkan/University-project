@@ -1,0 +1,11 @@
+PERSONS:
+  - ID: 1
+    FIRST_NAME: "firstname10" 
+    LAST_NAME: "lastname10" 
+    MIDDLE_NAME: "middlename10" 
+    BIRTHDAY: "2010-02-01"
+    IDFEES: 111111110
+    
+STUDENTS:
+  - PERSON_ID: 1
+    GROUP_ID: null

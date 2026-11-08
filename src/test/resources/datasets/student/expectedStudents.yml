@@ -1,0 +1,27 @@
+PERSONS:
+  - ID: 1
+    FIRST_NAME: "firstname1" 
+    LAST_NAME: "lastname1" 
+    MIDDLE_NAME: "middlename1" 
+    BIRTHDAY: "1991-02-01"
+    IDFEES: 111111111
+  - ID: 2
+    FIRST_NAME: "firstname2" 
+    LAST_NAME: "lastname2" 
+    MIDDLE_NAME: "middlename2" 
+    BIRTHDAY: "1992-02-01"
+    IDFEES: 111111112
+  - ID: 3
+    FIRST_NAME: "firstname3" 
+    LAST_NAME: "lastname3" 
+    MIDDLE_NAME: "middlename3" 
+    BIRTHDAY: "1993-02-01"
+    IDFEES: 111111113
+    
+STUDENTS:
+  - PERSON_ID: 1
+    GROUP_ID: null
+  - PERSON_ID: 2
+    GROUP_ID: null
+  - PERSON_ID: 3
+    GROUP_ID: null

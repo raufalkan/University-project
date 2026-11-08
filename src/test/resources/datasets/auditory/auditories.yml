@@ -1,0 +1,41 @@
+AUDITORY_TYPES:
+  - ID: 1
+    TYPE: "Lecture" 
+  - ID: 2
+    TYPE: "Practic"
+  - ID: 3
+    TYPE: "Laboratory"
+  - ID: 4
+    TYPE: "Lecture small"
+    
+AUDITORIES:
+  - ID: 1
+    NUMBER: "101a" 
+    AUDITORY_TYPE_ID: 1
+    CAPACITY: 100
+    DESCRIPTION: "bla bla bla 1"
+  - ID: 2
+    NUMBER: "102a" 
+    AUDITORY_TYPE_ID: 2
+    CAPACITY: 50
+    DESCRIPTION: "bla bla bla 2"
+  - ID: 3
+    NUMBER: "201a" 
+    AUDITORY_TYPE_ID: 3
+    CAPACITY: 10
+    DESCRIPTION: "bla bla bla 3"
+  - ID: 4
+    NUMBER: "103a" 
+    AUDITORY_TYPE_ID: 4
+    CAPACITY: 30
+    DESCRIPTION: "bla bla bla 4"
+  - ID: 5
+    NUMBER: "405a" 
+    AUDITORY_TYPE_ID: 1
+    CAPACITY: 14
+    DESCRIPTION: "bla bla bla 5"
+  - ID: 6
+    NUMBER: "161a" 
+    AUDITORY_TYPE_ID: 2
+    CAPACITY: 20
+    DESCRIPTION: "bla bla bla 6"
