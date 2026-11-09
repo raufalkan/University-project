@@ -1,8 +1,5 @@
 package ua.com.foxminded.task.homework.rauf.mutants;
 
-// HW2 - kill tests for the 10 mutants
-// 9 killed, 1 equivalent (M9)
-
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -25,14 +22,13 @@ import ua.com.foxminded.task.domain.Group;
 import ua.com.foxminded.task.domain.dto.GroupDto;
 
 @ExtendWith(MockitoExtension.class)
-class GroupCreateMutantKillTest {
+public class GroupCreateMutantKillTest {
 
     @Mock
     private GroupRepository groupRepository;
 
     private GroupDto input;
 
-    // oracle from HW1 test
     private void applyHw1Oracle(GroupDto result) {
         assertAll(
                 () -> assertEquals(7, result.getId()),

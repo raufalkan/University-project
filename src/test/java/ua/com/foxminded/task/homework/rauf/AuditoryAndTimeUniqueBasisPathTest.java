@@ -1,7 +1,5 @@
 package ua.com.foxminded.task.homework.rauf;
 
-// HW2 - basis path tests for AuditoryAndTimeUniqueValidator (CC = 4)
-
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
@@ -32,7 +30,7 @@ import ua.com.foxminded.task.service.TimetableItemService;
 import ua.com.foxminded.task.validation.validator.AuditoryAndTimeUniqueValidator;
 
 @ExtendWith(MockitoExtension.class)
-class AuditoryAndTimeUniqueBasisPathTest {
+public class AuditoryAndTimeUniqueBasisPathTest {
 
     private static final LocalDate LESSON_DAY = LocalDate.of(2026, 11, 10);
     private static final int AUDITORY_ID = 2;

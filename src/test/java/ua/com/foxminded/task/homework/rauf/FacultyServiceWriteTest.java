@@ -13,7 +13,9 @@ import ua.com.foxminded.task.domain.Faculty;
 import ua.com.foxminded.task.domain.dto.FacultyDto;
 import ua.com.foxminded.task.service.impl.FacultyServiceImpl;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;

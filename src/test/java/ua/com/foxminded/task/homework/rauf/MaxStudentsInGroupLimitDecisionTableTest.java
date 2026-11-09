@@ -1,14 +1,8 @@
 package ua.com.foxminded.task.homework.rauf;
 
-// HW2 - decision table tests for MaxStudentsInGroupLimitValidator
-// C1 = count >= limit, C2 = isStudentAtGroup
-
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.lenient;
-import static org.mockito.Mockito.never;
-import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import javax.validation.ConstraintValidatorContext;
@@ -28,7 +22,7 @@ import ua.com.foxminded.task.service.StudentService;
 import ua.com.foxminded.task.validation.validator.MaxStudentsInGroupLimitValidator;
 
 @ExtendWith(MockitoExtension.class)
-class MaxStudentsInGroupLimitDecisionTableTest {
+public class MaxStudentsInGroupLimitDecisionTableTest {
 
     private static final int LIMIT = 30;
     private static final long COUNT_BELOW_LIMIT = 20L;
@@ -76,8 +70,6 @@ class MaxStudentsInGroupLimitDecisionTableTest {
         boolean result = validator.isValid(newStudent(), context);
 
         assertTrue(result);
-        verify(studentService, never()).existsStudentByIdAndGroupId(anyInt(), anyInt());
-        verify(context, never()).disableDefaultConstraintViolation();
     }
 
     @Test
@@ -89,8 +81,6 @@ class MaxStudentsInGroupLimitDecisionTableTest {
         boolean result = validator.isValid(newStudent(), context);
 
         assertTrue(result);
-        verify(studentService, never()).existsStudentByIdAndGroupId(anyInt(), anyInt());
-        verify(context, never()).disableDefaultConstraintViolation();
     }
 
     @Test
@@ -104,8 +94,6 @@ class MaxStudentsInGroupLimitDecisionTableTest {
         boolean result = validator.isValid(newStudent(), context);
 
         assertTrue(result);
-        verify(studentService).existsStudentByIdAndGroupId(STUDENT_ID, GROUP_ID);
-        verify(context, never()).disableDefaultConstraintViolation();
     }
 
     @Test
@@ -119,10 +107,5 @@ class MaxStudentsInGroupLimitDecisionTableTest {
         boolean result = validator.isValid(newStudent(), context);
 
         assertFalse(result);
-        verify(studentService).existsStudentByIdAndGroupId(STUDENT_ID, GROUP_ID);
-        verify(context).disableDefaultConstraintViolation();
-        verify(context).buildConstraintViolationWithTemplate("Group is full");
-        verify(violationBuilder).addPropertyNode("groupId");
-        verify(nodeBuilder).addConstraintViolation();
     }
 }

@@ -1,8 +1,5 @@
 package ua.com.foxminded.task.homework.rauf;
 
-// HW2 - basis path tests for MaxStudentsInGroupLimitValidator
-// CC = 4, 3 feasible paths + 1 infeasible
-
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.anyInt;
@@ -28,7 +25,7 @@ import ua.com.foxminded.task.service.StudentService;
 import ua.com.foxminded.task.validation.validator.MaxStudentsInGroupLimitValidator;
 
 @ExtendWith(MockitoExtension.class)
-class MaxStudentsInGroupLimitBasisPathTest {
+public class MaxStudentsInGroupLimitBasisPathTest {
 
     private static final int LIMIT = 30;
 
